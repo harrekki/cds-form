@@ -8,7 +8,138 @@
     <link rel="stylesheet" href="/index.b10d73a7.css">
 </head>
 <body>
-    This is a test.
+    <header>
+        <img src="/banner.9705f5ed.png" class="banner-img img-fluid d-block mx-auto" alt="The front of the Convention Data Services office building from above">
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="text-center py-2">Contact Details</h1>
+            <form action="">
+                <!-- first name field -->
+                <div class="mb-3">
+                    <label for="fname" class="form-label">
+                        First Name<span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-control" name="fname" id="fname" maxlength="30" required="">
+                </div>
+                <!-- last name field -->
+                <div class="mb-3">
+                    <label for="lname" class="form-label">
+                        Last Name<span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-control" name="lname" id="lname" maxlength="30" required="">
+                </div>
+                <!-- phone field -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label">
+                        Phone Number<span class="required">*</span>
+                    </label>
+                    <input type="tel" class="form-control" name="phone" id="phone" maxlength="30" pattern="[0-9]+" placeholder="numbers only, ex. 1234567890" required="">
+                </div>
+                <!-- email field -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        Email<span class="required">*</span>
+                    </label>
+                    <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="your-email@example.com" required="">
+                    <small>An email is required to recieve an email confirmation</small>
+                </div>
+                <!-- promo code field -->
+                <div class="mb-3">
+                    <label for="promo" class="form-label">
+                        Promo Code
+                    </label>
+                    <input type="text" class="form-control" name="promo" id="promo" maxlength="7" pattern="[a-zA-Z0-9]+">
+                </div>
+                <!-- Acquisition Survey -->
+                <fieldset class="mb-3">
+                    <legend>How did you hear about us?</legend>
+                    <!-- Option 1 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="source" id="source-social" value="social">
+                        <label for="source-social" class="form-check-label">
+                            Social Media
+                        </label>  
+                    </div>
+                    <!-- Option 2 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="source" id="source-friend" value="friend">
+                        <label for="source-friend" class="form-check-label">
+                            From a friend
+                        </label>  
+                    </div>
+                    <!-- Option 3 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="source" id="source-email" value="email">
+                        <label for="source-email" class="form-check-label">
+                            Email
+                        </label>  
+                    </div>
+                    <!-- Option 4 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="source" id="source-other" value="other">
+                        <label for="source-other" class="form-check-label">
+                            Other
+                        </label>
+                        <div class="">
+                            <label for="other-text" class="form-label">
+                                Please Specify<span class="required">*</span>
+                            </label>
+                            <textarea name="other-text" id="other-text" class="form-control" cols="15" rows="5" maxlength="255" placeholder="Type your answer here..." required=""></textarea>
+                        </div>  
+                    </div>
+                </fieldset>
+
+                <!-- Terms and conditions -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" name="agree-terms" id="agree-terms" value="yes" required="">
+                    <label for="agree-terms" class="form-check-label">
+                        I agree to the 
+                        <span class="btn btn-link px-0" id="terms-btn" role="button" data-bs-toggle="modal" data-bs-target="#terms-modal">
+                            terms and conditions
+                        </span> 
+                        of this event
+                    </label>
+                </div>
+
+                <!-- Submit button -->
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-primary">
+                        Submit Form
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <footer class="text-bg-secondary p-4">
+        <div class="container">
+            <p class="m-0 text-center">
+                For assistance please call <a href="tel:+15555555555">555-5555</a> or 
+                email <a href="mailto:text@text.com">text@test.com</a>.
+            </p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="terms-modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title">Terms & Conditions</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>All cancellation requests must be received by March 1, 2022</li>
+                <li>All cancellation requests are subject to a $100 cancellation fee</li>
+                <li>No one under the age of 16 will be allowed on the show floor.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- JavaScript -->
     <script src="/index.59a40e7a.js" defer=""></script>
 </body>
