@@ -53,40 +53,52 @@
                     <input type="text" class="form-control" name="promo" id="promo" maxlength="7" pattern="[a-zA-Z0-9]+">
                 </div>
                 <!-- Acquisition Survey -->
+                <!-- <div class="mb-3">
+                    <label for="referral" class="form-label">
+                        How did you hear about us?
+                    </label>
+                    <select class="form-select" id="referral" name="referral">
+                        <option selected>--Please choose an option--</option>
+                        <option value="social">Social media</option>
+                        <option value="friend">From a friend</option>
+                        <option value="email">Email</option>
+                        <option value="other">Other</option>
+                      </select>
+                </div> -->
                 <fieldset class="mb-3">
                     <legend>How did you hear about us?</legend>
-                    <!-- Option 1 -->
+                    
                     <div class="form-check">
                         <input type="radio" class="form-check-input" name="source" id="source-social" value="social">
                         <label for="source-social" class="form-check-label">
                             Social Media
                         </label>  
                     </div>
-                    <!-- Option 2 -->
+                    
                     <div class="form-check">
                         <input type="radio" class="form-check-input" name="source" id="source-friend" value="friend">
                         <label for="source-friend" class="form-check-label">
                             From a friend
                         </label>  
                     </div>
-                    <!-- Option 3 -->
+                    
                     <div class="form-check">
                         <input type="radio" class="form-check-input" name="source" id="source-email" value="email">
                         <label for="source-email" class="form-check-label">
                             Email
                         </label>  
                     </div>
-                    <!-- Option 4 -->
+                    
                     <div class="form-check">
                         <input type="radio" class="form-check-input" name="source" id="source-other" value="other">
                         <label for="source-other" class="form-check-label">
                             Other
                         </label>
-                        <div class="">
+                        <div class="other-text">
                             <label for="other-text" class="form-label">
                                 Please Specify<span class="required">*</span>
                             </label>
-                            <textarea name="other-text" id="other-text" class="form-control" cols="15" rows="5" maxlength="255" placeholder="Type your answer here..." required=""></textarea>
+                            <textarea name="other-text" id="other-text" class="form-control" cols="15" rows="5" maxlength="255" placeholder="Type your answer here..."></textarea>
                         </div>  
                     </div>
                 </fieldset>
@@ -99,7 +111,7 @@
                         <span class="btn btn-link px-0" id="terms-btn" role="button" data-bs-toggle="modal" data-bs-target="#terms-modal">
                             terms and conditions
                         </span> 
-                        of this event
+                        of this event<span class="required">*</span>
                     </label>
                 </div>
 

@@ -576,6 +576,25 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"8lRBv":[function(require,module,exports) {
 var _bootstrap = require("bootstrap");
+const radioButtons = document.querySelectorAll('input[name="source"]');
+const textareaDiv = document.querySelector(".other-text");
+const otherText = document.getElementById("other-text");
+document.addEventListener("DOMContentLoaded", ()=>{
+    textareaDiv.style.display = "none";
+});
+radioButtons.forEach((radioButton)=>{
+    radioButton.addEventListener("click", (event)=>{
+        if (event.target.value === "other") {
+            textareaDiv.style.display = "";
+            otherText.required = true;
+            console.log(otherText);
+        } else {
+            textareaDiv.style.display = "none";
+            otherText.required = false;
+            console.log(otherText);
+        }
+    });
+});
 
 },{"bootstrap":"h36JB"}],"h36JB":[function(require,module,exports) {
 /*!

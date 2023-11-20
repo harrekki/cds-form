@@ -95,9 +95,21 @@
                     />
                 </div>
                 <!-- Acquisition Survey -->
+                <!-- <div class="mb-3">
+                    <label for="referral" class="form-label">
+                        How did you hear about us?
+                    </label>
+                    <select class="form-select" id="referral" name="referral">
+                        <option selected>--Please choose an option--</option>
+                        <option value="social">Social media</option>
+                        <option value="friend">From a friend</option>
+                        <option value="email">Email</option>
+                        <option value="other">Other</option>
+                      </select>
+                </div> -->
                 <fieldset class="mb-3">
                     <legend>How did you hear about us?</legend>
-                    <!-- Option 1 -->
+                    
                     <div class="form-check">
                         <input 
                             type="radio" 
@@ -110,7 +122,7 @@
                             Social Media
                         </label>  
                     </div>
-                    <!-- Option 2 -->
+                    
                     <div class="form-check">
                         <input 
                             type="radio" 
@@ -123,7 +135,7 @@
                             From a friend
                         </label>  
                     </div>
-                    <!-- Option 3 -->
+                    
                     <div class="form-check">
                         <input 
                             type="radio" 
@@ -136,7 +148,7 @@
                             Email
                         </label>  
                     </div>
-                    <!-- Option 4 -->
+                    
                     <div class="form-check">
                         <input 
                             type="radio" 
@@ -148,7 +160,7 @@
                         <label for="source-other" class="form-check-label">
                             Other
                         </label>
-                        <div class="">
+                        <div class="other-text">
                             <label for="other-text" class="form-label">
                                 Please Specify<span class="required">*</span>
                             </label>
@@ -160,7 +172,6 @@
                                 rows="5"
                                 maxlength="255"
                                 placeholder="Type your answer here..."
-                                required 
                             ></textarea>
                         </div>  
                     </div>
@@ -187,7 +198,7 @@
                         >
                             terms and conditions
                         </span> 
-                        of this event
+                        of this event<span class="required">*</span>
                     </label>
                 </div>
 
