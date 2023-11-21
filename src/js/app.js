@@ -2,11 +2,8 @@ import 'bootstrap';
 import * as bootstrap from 'bootstrap';
 window.Modal = bootstrap.Modal;
 
-const promoInput = document.getElementById('promo');
-const radioButtons = document.querySelectorAll('input[name="source"]');
 const textareaDiv = document.querySelector('.other-text');
-const otherText = document.getElementById('other-text');
-const legend = document.getElementById('referral');
+const legend = document.getElementById('referral-title');
 
 // Set styles on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   legend.classList.add('required');
 })
 
-// Display and requre other textarea if other radio button is selected
+const promoInput = document.getElementById('promo');
+const radioButtons = document.querySelectorAll('input[name="source"]');
+const otherText = document.getElementById('other-text');
+
+// Display and requre other textarea if "other" radio button is selected
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('click', event => {
     if(event.target.value === "other") {
@@ -32,16 +33,16 @@ promoInput.addEventListener('input', () => {
     // TODO require promoInput.value to be alphanumeric to require (regexp?) 
     if(promoInput.value) {
         radioButtons.forEach(radioButton => radioButton.required = false);
-        referral.classList.remove('required');
+        legend.classList.remove('required');
     } else {
         radioButtons.forEach(radioButton => radioButton.required = true);
-        referral.classList.add('required');
+        legend.classList.add('required');
     }
 })
 
-// Disable form submission if there are invalid fields
 const form = document.querySelector('.needs-validation');
 
+// Disable form submission if there are invalid fields
 form.addEventListener('submit', event => {
     event.preventDefault();
     
@@ -51,7 +52,8 @@ form.addEventListener('submit', event => {
     } else {
         const successModal = new bootstrap.Modal(document.getElementById('success-modal'));
         successModal.show();
-        form.classList.remove('was-validated')
+        // removing class to prevent messages after form is submitted
+        form.classList.remove('was-validated');
         document.querySelector('form').reset();
     }
 

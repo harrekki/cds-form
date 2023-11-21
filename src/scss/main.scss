@@ -1,3 +1,5 @@
+// Custom Bootstrap Variables
+
 $font-sizes: (
     1: 1.5rem,
     2: 1.25rem,
@@ -9,6 +11,7 @@ $font-sizes: (
 
 $input-font-size: 0.75rem;
 
+// Custom Styles
 img {
     max-height: 200px;
 }
@@ -20,4 +23,5 @@ img {
     margin-left: 0.125em;
 }
 
+// import Bootstrap styles (must be after custom code)
 @import "~bootstrap/scss/bootstrap";
