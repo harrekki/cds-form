@@ -1,4 +1,6 @@
 import 'bootstrap';
+import * as bootstrap from 'bootstrap';
+window.Modal = bootstrap.Modal;
 
 const promoInput = document.getElementById('promo');
 const radioButtons = document.querySelectorAll('input[name="source"]');
@@ -9,7 +11,7 @@ const legend = document.getElementById('referral');
 // Set styles on page load
 document.addEventListener('DOMContentLoaded', () => {
   textareaDiv.style.display = 'none';
-  referral.classList.add('required');
+  legend.classList.add('required');
 })
 
 // Display and requre other textarea if other radio button is selected
@@ -27,7 +29,7 @@ radioButtons.forEach(radioButton => {
 
 // Set referral radio buttons as required if promo code input is empty
 promoInput.addEventListener('input', () => {
-    // TODO require promoInput.value to be alphanumeric to validate (regexp?) 
+    // TODO require promoInput.value to be alphanumeric to require (regexp?) 
     if(promoInput.value) {
         radioButtons.forEach(radioButton => radioButton.required = false);
         referral.classList.remove('required');
@@ -41,11 +43,16 @@ promoInput.addEventListener('input', () => {
 const form = document.querySelector('.needs-validation');
 
 form.addEventListener('submit', event => {
+    event.preventDefault();
+    
     if (!form.checkValidity()) {
-        event.preventDefault();
         event.stopPropagation();
-        }
-
         form.classList.add('was-validated');
-    }, 
-false);
+    } else {
+        const successModal = new bootstrap.Modal(document.getElementById('success-modal'));
+        successModal.show();
+        form.classList.remove('was-validated')
+        document.querySelector('form').reset();
+    }
+
+});
