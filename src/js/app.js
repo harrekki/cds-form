@@ -4,34 +4,48 @@ const promoInput = document.getElementById('promo');
 const radioButtons = document.querySelectorAll('input[name="source"]');
 const textareaDiv = document.querySelector('.other-text');
 const otherText = document.getElementById('other-text');
+const legend = document.getElementById('referral');
 
+// Set styles on page load
 document.addEventListener('DOMContentLoaded', () => {
   textareaDiv.style.display = 'none';
+  referral.classList.add('required');
 })
 
-promoInput.addEventListener('input', () => {
-    const referral = document.getElementById('referral');
-    const requiredElem = `<span class="required">*</span>`;
-
-    if(promoInput.value) {
-        radioButtons.forEach(radioButton => radioButton.required = true);
-        referral.innerHTML += requiredElem;
-    } else {
-        radioButtons.forEach(radioButton => radioButton.required = false);
-        referral.innerHTML = "How did you hear about us?"
-    }
-})
-
+// Display and requre other textarea if other radio button is selected
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('click', event => {
     if(event.target.value === "other") {
       textareaDiv.style.display = '';
       otherText.required = true;
-      console.log(otherText)
     } else {
       textareaDiv.style.display = 'none';
       otherText.required = false;
-      console.log(otherText)
     }
   })
 })
+
+// Set referral radio buttons as required if promo code input is empty
+promoInput.addEventListener('input', () => {
+    // TODO require promoInput.value to be alphanumeric to validate (regexp?) 
+    if(promoInput.value) {
+        radioButtons.forEach(radioButton => radioButton.required = false);
+        referral.classList.remove('required');
+    } else {
+        radioButtons.forEach(radioButton => radioButton.required = true);
+        referral.classList.add('required');
+    }
+})
+
+// Disable form submission if there are invalid fields
+const form = document.querySelector('.needs-validation');
+
+form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+    }, 
+false);
