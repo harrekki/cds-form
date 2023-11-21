@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./scss/main.scss">
 </head>
 <body>
-    <header>
+    <header class="bg-primary-subtle">
         <img 
             src="./img/banner.png" 
             class="banner-img img-fluid d-block mx-auto" 
@@ -16,174 +16,182 @@
         />
     </header>
 
-    <main>
+    <main class="fs-6">
         <div class="container">
             <h1 class="text-center py-2">Contact Details</h1>
             <small>Fields marked with a red asterisk(<span class="required"></span>) are required</small>
             <form class="needs-validation" novalidate>
-                <!-- first name field -->
-                <div class="mb-3">
-                    <label for="fname" class="form-label fw-bold fs-6 required">First Name</label>
-                    <input 
-                        type="text" 
-                        class="form-control" 
-                        name="fname" 
-                        id="fname"
-                        maxlength="30"
-                        required
-                    />
-                    <div class="invalid-feedback">
-                        Please enter your first name.
-                    </div>
-                </div>
-                <!-- last name field -->
-                <div class="mb-3">
-                    <label for="lname" class="form-label fw-bold required">Last Name</label>
-                    <input 
-                        type="text" 
-                        class="form-control" 
-                        name="lname" 
-                        id="lname"
-                        maxlength="30"
-                        required
-                    />
-                    <div class="invalid-feedback">
-                        Please enter your last name.
-                    </div>
-                </div>
-                <!-- phone field -->
-                <div class="mb-3">
-                    <label for="phone" class="form-label required">Phone Number</label>
-                    <input 
-                        type="tel" 
-                        class="form-control" 
-                        name="phone" 
-                        id="phone"
-                        maxlength="30"
-                        pattern="[0-9]+"
-                        placeholder="numbers only, ex. 1234567890"
-                        required
-                    />
-                    <div class="invalid-feedback">
-                        Please enter a valid phone number.
-                    </div>
-                </div>
-                <!-- email field -->
-                <div class="mb-3">
-                    <label for="email" class="form-label fst-italic required">Email</label>
-                    <input 
-                        type="email" 
-                        class="form-control" 
-                        name="email" 
-                        id="email"
-                        maxlength="50"
-                        placeholder="your-email@example.com"
-                        required
-                    />
-                    <div class="invalid-feedback">
-                        Please enter a valid email address.
-                    </div>
-                    <small class="fst-italic">An email is required to recieve an email confirmation</small>
-                </div>
-                <!-- promo code field -->
-                <div class="mb-3">
-                    <label for="promo" class="form-label">
-                        Promo Code
-                    </label>
-                    <input 
-                        type="text"
-                        class="form-control" 
-                        name="promo" 
-                        id="promo"
-                        maxlength="7"
-                        pattern="[a-zA-Z0-9]+"
-                    />
-                    <div class="invalid-feedback">
-                        Promo codes can only contain letters and numbers.
-                    </div>
-                </div>
-
-                <!-- Acquisition Survey -->
-                <fieldset class="mb-3">
-                    <legend id="referral">How did you hear about us?</legend>
-                    <div class="form-check">
+                <div class="row">
+                    <!-- first name field -->
+                    <div class="mb-3 col-md-6">
+                        <label for="fname" class="form-label fw-bold fs-5 required">First Name</label>
                         <input 
-                            type="radio" 
-                            class="form-check-input"
-                            name="source"
-                            id="source-social"
-                            value="social"
+                            type="text" 
+                            class="form-control" 
+                            name="fname" 
+                            id="fname"
+                            maxlength="30"
                             required
                         />
-                        <label for="source-social" class="form-check-label">
-                            Social Media
-                        </label>  
-                    </div>
-                    
-                    <div class="form-check">
-                        <input 
-                            type="radio" 
-                            class="form-check-input"
-                            name="source"
-                            id="source-friend"
-                            value="friend"
-                            required
-                        />
-                        <label for="source-friend" class="form-check-label">
-                            From a friend
-                        </label>  
-                    </div>
-                    
-                    <div class="form-check">
-                        <input 
-                            type="radio" 
-                            class="form-check-input"
-                            name="source"
-                            id="source-email"
-                            value="email"
-                            required
-                        />
-                        <label for="source-email" class="form-check-label">
-                            Email
-                        </label>  
-                    </div>
-                    
-                    <div class="form-check">
-                        <input 
-                            type="radio" 
-                            class="form-check-input"
-                            name="source"
-                            id="source-other"
-                            value="other"
-                            required
-                        />
-                        <label for="source-other" class="form-check-label">
-                            Other
-                        </label>
                         <div class="invalid-feedback">
-                            If you do not have a promo code, please choose an option above.
+                            Please enter your first name.
                         </div>
-
-                        <div class="other-text">
-                            <label 
-                                for="other-text" 
-                                class="form-label required"
-                            >Please Specify</label>
-                            <textarea 
-                                name="other-text" 
-                                id="other-text" 
-                                class="form-control"
-                                cols="15" 
-                                rows="5"
-                                maxlength="255"
-                                placeholder="Type your answer here..."
-                            ></textarea>
-                            <div class="invalid-feedback">
-                                Please specify how you heard about this event.
-                            </div>
-                        </div>  
                     </div>
-                </fieldset>
+                    <!-- last name field -->
+                    <div class="mb-3 col-md-6">
+                        <label for="lname" class="form-label fw-bold fs-5 required">Last Name</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            name="lname" 
+                            id="lname"
+                            maxlength="30"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Please enter your last name.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- phone field -->
+                    <div class="mb-3 col-md-6">
+                        <label for="phone" class="form-label required">Phone Number</label>
+                        <input 
+                            type="tel" 
+                            class="form-control" 
+                            name="phone" 
+                            id="phone"
+                            maxlength="30"
+                            pattern="[0-9]+"
+                            placeholder="numbers only, ex. 1234567890"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a valid phone number.
+                        </div>
+                    </div>
+                    <!-- email field -->
+                    <div class="mb-3 col-md-6">
+                        <label for="email" class="form-label fst-italic required">Email</label>
+                        <input 
+                            type="email" 
+                            class="form-control" 
+                            name="email" 
+                            id="email"
+                            maxlength="50"
+                            placeholder="your-email@example.com"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                        <small class="fst-italic form-text">An email is required to recieve an email confirmation</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- promo code field -->
+                    <div class="mb-3 col-md-6">
+                        <label for="promo" class="form-label">
+                            Promo Code
+                        </label>
+                        <input 
+                            type="text"
+                            class="form-control" 
+                            name="promo" 
+                            id="promo"
+                            maxlength="7"
+                            pattern="[a-zA-Z0-9]+"
+                        />
+                        <div class="invalid-feedback">
+                            Promo codes can only contain letters and numbers.
+                        </div>
+                    </div>
+    
+                    <!-- Acquisition Survey -->
+                    <fieldset class="mb-3 col-md-6">
+                        <legend class="fs-4" id="referral">How did you hear about us?</legend>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input"
+                                name="source"
+                                id="source-social"
+                                value="social"
+                                required
+                            />
+                            <label for="source-social" class="form-check-label">
+                                Social Media
+                            </label>  
+                        </div>
+                        
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input"
+                                name="source"
+                                id="source-friend"
+                                value="friend"
+                                required
+                            />
+                            <label for="source-friend" class="form-check-label">
+                                From a friend
+                            </label>  
+                        </div>
+                        
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input"
+                                name="source"
+                                id="source-email"
+                                value="email"
+                                required
+                            />
+                            <label for="source-email" class="form-check-label">
+                                Email
+                            </label>  
+                        </div>
+                        
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input"
+                                name="source"
+                                id="source-other"
+                                value="other"
+                                required
+                            />
+                            <label for="source-other" class="form-check-label">
+                                Other
+                            </label>
+                            <div class="invalid-feedback">
+                                If you do not have a promo code, please choose an option above.
+                            </div>
+    
+                            <div class="other-text">
+                                <label 
+                                    for="other-text" 
+                                    class="form-label required"
+                                >Please Specify</label>
+                                <textarea 
+                                    name="other-text" 
+                                    id="other-text" 
+                                    class="form-control"
+                                    cols="15" 
+                                    rows="5"
+                                    maxlength="255"
+                                    placeholder="Type your answer here..."
+                                ></textarea>
+                                <div class="invalid-feedback">
+                                    Please specify how you heard about this event.
+                                </div>
+                            </div>  
+                        </div>
+                    </fieldset>
+                </div>
 
                 <!-- Terms and conditions -->
                 <div class="form-check mb-3">
@@ -211,7 +219,7 @@
                 </div>
 
                 <!-- Submit button -->
-                <div class="d-grid mb-3">
+                <div class="d-grid mb-3 mx-auto col-md-4">
                     <button 
                         class="btn btn-primary"
                         type="submit" 
@@ -226,7 +234,7 @@
         </div>
     </main>
 
-    <footer class="text-bg-secondary p-4">
+    <footer class="text-bg-secondary fs-3 p-4">
         <div class="container">
             <p class="m-0 text-center">
                 For assistance please call <a href="tel:+15555555555">555-5555</a> or 

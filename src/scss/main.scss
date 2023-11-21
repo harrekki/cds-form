@@ -1,4 +1,23 @@
-@import 'variables';
-@import 'helpers';
+$font-sizes: (
+    1: 1.5rem,
+    2: 1.25rem,
+    3: 1.125rem,
+    4: 1rem,
+    5: 0.875rem,
+    6: 0.75rem
+);
+
+$input-font-size: 0.75rem;
+
+img {
+    max-height: 200px;
+}
+
+.required::after {
+    content: '*';
+    color: red;
+    font-weight: bold;
+    margin-left: 0.125em;
+}
 
 @import "~bootstrap/scss/bootstrap";
